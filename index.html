@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts about orange cats</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Lacquer;
+        }
+
+        body {
+            background-image: linear-gradient(to right, #E6DADA, #274046);
+            color: white;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+        button {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
+            border: 0;
+            box-shadow: 2px 2px 5px 1px #274046;
+            transition: 0.4s;
+        }
+
+        button:hover{
+            width: 110px;
+            background: #274046;
+            color: white;
+            box-shadow: 2px 2px 5px 1px white;
+        }
+
+        .tabs {
+          width: 90%;
+          margin: auto;
+          text-align: center;
+          margin-bottom: 50px;
+        }
+
+        .tabs img {
+          height: 300px;
+        }
+
+        .tabs p{
+          font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="changeTab('first', event )">First</button>
+        <button onclick="changeTab('second', event )">Second</button>
+        <button onclick="changeTab('third', event )">Third</button>
+    </div>
+
+    <div class="tabs">
+
+      <div class="tab" id="first">
+        <img src="https://i.pinimg.com/originals/56/a6/14/56a614261d423da1825452363174c685.gif" alt=""> <p>
+          Fact number one - orange cats are never a solid color. Instead, they are always striped, a pattern that is known as tabby. There are variations in the types of stripes each cat has. There are 4 main patterns seen - Mackerel, Ticked, Spotted, Classic.
+        </p>
+      </div>
+      
+      <div class="tab" id="second"><img src="https://i.pinimg.com/originals/b9/32/94/b93294fa1bc8a9cf45ef401532fcfdec.gif" alt=""><p>Fact number two - most orange cats are marked with an 'M'. Due to their tabby cat stripes, most orange cats will have an M-shaped marking on their forehead. There are many legends surrounding this M.</p>
+
+      </div>
+
+      <div class="tab" id="third">
+        <img src="https://media.tenor.com/_ETKRybU9WEAAAAd/orange-cat-stare.gif" alt=""><p>Fact number three - most orange cats are male. Up to 80 perecnt of orange tabbies are male, making only 20 percent of them female. This is because the gene that produces orange fur is on the X chromosome.</p>
+      </div>
+    </div>
+
+
+
+    <script>
+      var tabs = document.getElementsByClassName("tab")
+      var buttons = document.querySelectorAll("button")
+
+      for(var tab of tabs){
+         tab.style.display = "none"
+      }
+
+      // tabs[0].style.display = "block"
+      buttons[0].classList.add("active")
+
+      function changeTab(id, event){
+        for(var tab of tabs){
+          tab.style.display = "none"
+        }
+
+        document.getElementById(id).style.display = "block"
+
+        for(var button of buttons){
+          button.classList.remove = "active"
+        }
+        event.currentTarget.classList.add("active")
+      }
+    </script>
+</body>
+</html>
